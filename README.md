@@ -1,0 +1,1 @@
+# bugtracker_detalle_bug
