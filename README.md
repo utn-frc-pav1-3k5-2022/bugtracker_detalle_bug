@@ -49,7 +49,7 @@ Para ejecutar el script hacer click sobre el botón `Ejecutar` (o usar la tecla 
 
 ## 3. Actividad: Detalle Bug
 
-*** Actividd en clase
+(Actividad en Clase)
 
 ## 4. Versionar los cambios locales (add / commit / push)
 
