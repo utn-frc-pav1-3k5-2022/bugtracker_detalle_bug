@@ -15,6 +15,7 @@ namespace BugTracker
         public frmConsultaBugs()
         {
             InitializeComponent();
+
         }
 
       
