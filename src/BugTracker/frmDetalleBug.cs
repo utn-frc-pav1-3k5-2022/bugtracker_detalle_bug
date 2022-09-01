@@ -17,11 +17,20 @@ namespace BugTracker
             InitializeComponent();
 
         }
-              
+        
+        internal void inicializarDetalleBug (int idBug)
+        {
+            return;
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

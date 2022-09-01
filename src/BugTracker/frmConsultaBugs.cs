@@ -15,6 +15,8 @@ namespace BugTracker
         public frmConsultaBugs()
         {
             InitializeComponent();
+            //no me autocompleta las columnas con el datagridview
+            dgvBugs.AutoGenerateColumns = false;
         }
 
       
@@ -107,5 +109,42 @@ namespace BugTracker
 
         }
 
+        private void txtFechaDesde_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void bntDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvBugs.CurrentRow != null)
+            {
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+                DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                int idBug = int.Parse(s: dr[0].ToString());
+                frmDetalle.inicializarDetalleBug(idBug);
+                frmDetalle.ShowDialog();
+
+            }
+        }
+        private void pnl_filtros_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataManagerBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvBugs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bntDetalle.Enabled = true;
+
+        }
     }
 }
