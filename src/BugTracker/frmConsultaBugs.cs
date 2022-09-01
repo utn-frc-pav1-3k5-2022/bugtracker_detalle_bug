@@ -107,5 +107,9 @@ namespace BugTracker
 
         }
 
+        private void pnl_filtros_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
