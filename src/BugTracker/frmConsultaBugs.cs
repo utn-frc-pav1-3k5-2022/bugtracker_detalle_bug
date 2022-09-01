@@ -15,9 +15,9 @@ namespace BugTracker
         public frmConsultaBugs()
         {
             InitializeComponent();
+            this.dgvBugs.AutoGenerateColumns = false;
+            this.btnDetalle.Enabled = false;
         }
-
-      
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -107,5 +107,27 @@ namespace BugTracker
 
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnDetalle.Enabled = true;
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if (this.dgvBugs.CurrentRow != null)
+            {
+                frmDetalleBug frm = new frmDetalleBug();
+                DataRowView dr = (DataRowView)this.dgvBugs.CurrentRow.DataBoundItem;
+                frm.InicializarDetalleBug(int.Parse(dr["id_bug"].ToString())); //Usando DataBoundItem
+                //frm.InicializarDetalleBug((int)this.dgvBugs.SelectedRows[0].Cells["columnaId"].Value); //Usando SelectedRows
+                //frm.InicializarDetalleBug((int)this.dgvBugs.CurrentRow.Cells["columnaId"].Value); //Usando CurrentRow
+                frm.ShowDialog();
+            }
+        }
     }
 }
