@@ -107,5 +107,22 @@ namespace BugTracker
 
         }
 
+        private void bntDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvBugs.CurrentRow != null) 
+            { 
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+                DataRowView dr = (DataRowView) dgvBugs.CurrentRow.DataBoundItem;
+                String idBug = int.Parse(dr[0].ToString());
+                frmDetalle.ShowDialog();
+                frmDetalle.InicializarDetalleBug(2);
+            }
+        }
+
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bntDetalle.Enabled = true;
+        }
+
     }
 }
