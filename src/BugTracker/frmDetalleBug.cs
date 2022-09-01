@@ -23,5 +23,16 @@ namespace BugTracker
         {
             this.Close();
         }
+
+        private void frmDetalleBug_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        internal void InicializarDetalleBug(int idBug)
+        {
+            
+
+        }
     }
 }
