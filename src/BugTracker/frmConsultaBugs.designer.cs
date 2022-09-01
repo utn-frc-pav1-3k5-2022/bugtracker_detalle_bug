@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_filtros = new System.Windows.Forms.GroupBox();
             this.cboProductos = new System.Windows.Forms.ComboBox();
             this.Label5 = new System.Windows.Forms.Label();
@@ -46,8 +47,10 @@
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.bntDetalle = new System.Windows.Forms.Button();
+            this.ColumnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -233,6 +236,9 @@
             this.dgvBugs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnTitulo,
+            this.ColumnDescripcion});
             this.dgvBugs.Location = new System.Drawing.Point(16, 245);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvBugs.Name = "dgvBugs";
@@ -241,10 +247,12 @@
             this.dgvBugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBugs.Size = new System.Drawing.Size(1200, 391);
             this.dgvBugs.TabIndex = 6;
+            this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
+            this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bntDetalle);
+            this.groupBox1.Controls.Add(this.btnDetalle);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 664);
@@ -252,6 +260,18 @@
             this.groupBox1.Size = new System.Drawing.Size(1234, 77);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Enabled = false;
+            this.btnDetalle.Location = new System.Drawing.Point(972, 27);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(117, 36);
+            this.btnDetalle.TabIndex = 17;
+            this.btnDetalle.Text = "Ver Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.bntDetalle_Click);
             // 
             // btnSalir
             // 
@@ -262,16 +282,27 @@
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // bntDetalle
+            // ColumnTitulo
             // 
-            this.bntDetalle.Location = new System.Drawing.Point(972, 27);
-            this.bntDetalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntDetalle.Name = "bntDetalle";
-            this.bntDetalle.Size = new System.Drawing.Size(117, 36);
-            this.bntDetalle.TabIndex = 17;
-            this.bntDetalle.Text = "Ver Detalle";
-            this.bntDetalle.UseVisualStyleBackColor = true;
+            this.ColumnTitulo.DataPropertyName = "titulo";
+            this.ColumnTitulo.HeaderText = "Titulo";
+            this.ColumnTitulo.MinimumWidth = 6;
+            this.ColumnTitulo.Name = "ColumnTitulo";
+            this.ColumnTitulo.ReadOnly = true;
+            this.ColumnTitulo.Width = 125;
+            // 
+            // ColumnDescripcion
+            // 
+            this.ColumnDescripcion.DataPropertyName = "descripcion";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnDescripcion.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColumnDescripcion.HeaderText = "Descripcion";
+            this.ColumnDescripcion.MinimumWidth = 6;
+            this.ColumnDescripcion.Name = "ColumnDescripcion";
+            this.ColumnDescripcion.ReadOnly = true;
+            this.ColumnDescripcion.Width = 125;
             // 
             // frmConsultaBugs
             // 
@@ -315,5 +346,8 @@
         private GroupBox groupBox1;
         internal Button btnSalir;
         internal Button bntDetalle;
+        private DataGridViewTextBoxColumn ColumnTitulo;
+        private DataGridViewTextBoxColumn ColumnDescripcion;
+        internal Button btnDetalle;
     }
 }

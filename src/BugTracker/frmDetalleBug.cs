@@ -23,5 +23,13 @@ namespace BugTracker
         {
             this.Close();
         }
+
+
+
+        internal void InicializarDetalleBug(int idBug)
+        {
+
+            
+        }
     }
 }
