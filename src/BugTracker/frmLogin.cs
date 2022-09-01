@@ -23,7 +23,7 @@ namespace BugTracker
         {
             // Terminamos la aplicacion dado que el usuario no inicio sesion.
             Environment.Exit(0);
-        }
+        } 
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
