@@ -299,4 +299,5 @@
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Button btnAceptar;
     }
+
 }

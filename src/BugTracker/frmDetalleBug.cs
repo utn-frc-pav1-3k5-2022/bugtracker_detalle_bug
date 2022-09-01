@@ -24,4 +24,11 @@ namespace BugTracker
             this.Close();
         }
     }
+
+    internal void InicializarDetalleBug(int idBug)
+    {
+        var resultado = bugService.ConsultarBug;
+
+        
+    }
 }

@@ -15,6 +15,7 @@ namespace BugTracker
         public frmConsultaBugs()
         {
             InitializeComponent();
+            dgvBugs.AutoGenerateColumns = false;
         }
 
       
@@ -107,5 +108,26 @@ namespace BugTracker
 
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bntDetalle.Enabled = true;
+        }
+
+        private void bntDetalle_Click_1(object sender, EventArgs e)
+        {
+            if (dgvBugs.CurrentRow != null)
+            {
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+                int idBug = dgvBugs.CurrentRow.Cells();
+                frmDetalle.InicializarDetalleBug(2);
+                frmDetalle.ShowDialog();
+            }
+        }
     }
 }
