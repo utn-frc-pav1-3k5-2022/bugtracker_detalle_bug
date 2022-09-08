@@ -46,8 +46,6 @@
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataManagerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bntDetalle = new System.Windows.Forms.Button();
@@ -55,6 +53,8 @@
             this.dataManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataManagerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataManagerBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataManagerBindingSource2)).BeginInit();
@@ -249,30 +249,18 @@
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Nombre});
+            this.Titulo});
             this.dgvBugs.DataSource = this.dataManagerBindingSource2;
-            this.dgvBugs.Location = new System.Drawing.Point(14, 184);
+            this.dgvBugs.Location = new System.Drawing.Point(14, 178);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvBugs.Name = "dgvBugs";
             this.dgvBugs.ReadOnly = true;
             this.dgvBugs.RowHeadersWidth = 51;
             this.dgvBugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBugs.Size = new System.Drawing.Size(1050, 293);
+            this.dgvBugs.Size = new System.Drawing.Size(1050, 299);
             this.dgvBugs.TabIndex = 6;
             this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
             this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id_Bug";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre Bug";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             // 
             // dataManagerBindingSource2
             // 
@@ -312,6 +300,7 @@
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dataManagerBindingSource
             // 
@@ -325,6 +314,20 @@
             // dataManagerBindingSource3
             // 
             this.dataManagerBindingSource3.DataSource = typeof(DataManager);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id_Bug";
+            this.Id.HeaderText = "Id_Bug";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Titulo
+            // 
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Título";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
             // 
             // frmConsultaBugs
             // 
@@ -377,6 +380,6 @@
         private BindingSource dataManagerBindingSource1;
         private BindingSource dataManagerBindingSource3;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Titulo;
     }
 }
