@@ -63,7 +63,7 @@ namespace BugTracker
         {
             //Inicializamos la variable usuarioValido en false, para que solo si el usuario es valido retorne true
             bool usuarioValido = false;
-            
+
             //La doble barra o */ nos permite escribir comentarios sobre nuestro codigo sin afectar su funcionamiento.
 
             //La sentencia try...catch nos permite "atrapar" excepciones (Errores) y dar al usuario un mensaje más amigable.
@@ -76,7 +76,7 @@ namespace BugTracker
                                                    "  WHERE usuario =  '", pUsuario, "'");
 
                 //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
-                DataTable resultado =  DataManager.GetInstance().ConsultaSQL(consultaSql);
+                DataTable resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
 
                 // Validamos que el resultado tenga al menos una fila.
                 if (resultado.Rows.Count >= 1)

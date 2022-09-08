@@ -59,7 +59,7 @@ public class DataManager
             tabla.Load(cmd.ExecuteReader());
             return tabla;
         }
-        catch (Exception ex)
+        catch(Exception ex)
         {
             throw (ex);
         }
