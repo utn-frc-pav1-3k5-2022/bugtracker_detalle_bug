@@ -47,12 +47,9 @@
             this.dgvBugs = new System.Windows.Forms.DataGridView();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Alta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Usuario_Repositorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Usuario_Asignado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bntDetalle = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
@@ -242,10 +239,7 @@
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Titulo,
             this.NombreDescripcion,
-            this.Fecha_Alta,
-            this.Id_Usuario_Repositorio,
-            this.Id_Usuario_Asignado,
-            this.Id_Producto});
+            this.columIDBug});
             this.dgvBugs.Location = new System.Drawing.Point(14, 184);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvBugs.Name = "dgvBugs";
@@ -270,33 +264,17 @@
             this.NombreDescripcion.Name = "NombreDescripcion";
             this.NombreDescripcion.ReadOnly = true;
             // 
-            // Fecha_Alta
+            // columIDBug
             // 
-            this.Fecha_Alta.HeaderText = "Fecha Alta";
-            this.Fecha_Alta.Name = "Fecha_Alta";
-            this.Fecha_Alta.ReadOnly = true;
-            // 
-            // Id_Usuario_Repositorio
-            // 
-            this.Id_Usuario_Repositorio.HeaderText = "Id_Usuario_Repositorio";
-            this.Id_Usuario_Repositorio.Name = "Id_Usuario_Repositorio";
-            this.Id_Usuario_Repositorio.ReadOnly = true;
-            // 
-            // Id_Usuario_Asignado
-            // 
-            this.Id_Usuario_Asignado.HeaderText = "Id_Usuario_Asignado";
-            this.Id_Usuario_Asignado.Name = "Id_Usuario_Asignado";
-            this.Id_Usuario_Asignado.ReadOnly = true;
-            // 
-            // Id_Producto
-            // 
-            this.Id_Producto.HeaderText = "Id_Producto";
-            this.Id_Producto.Name = "Id_Producto";
-            this.Id_Producto.ReadOnly = true;
+            this.columIDBug.DataPropertyName = "Id_Bug";
+            this.columIDBug.HeaderText = "Id_Bug";
+            this.columIDBug.Name = "columIDBug";
+            this.columIDBug.ReadOnly = true;
+            this.columIDBug.Visible = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bntDetalle);
+            this.groupBox1.Controls.Add(this.btnDetalle);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 498);
@@ -307,15 +285,16 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             // 
-            // bntDetalle
+            // btnDetalle
             // 
-            this.bntDetalle.Location = new System.Drawing.Point(850, 20);
-            this.bntDetalle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bntDetalle.Name = "bntDetalle";
-            this.bntDetalle.Size = new System.Drawing.Size(102, 27);
-            this.bntDetalle.TabIndex = 17;
-            this.bntDetalle.Text = "Ver Detalle";
-            this.bntDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Location = new System.Drawing.Point(850, 20);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(102, 27);
+            this.btnDetalle.TabIndex = 17;
+            this.btnDetalle.Text = "Ver Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.bntDetalle_Click);
             // 
             // btnSalir
             // 
@@ -368,12 +347,9 @@
         internal System.Windows.Forms.DataGridView dgvBugs;
         private GroupBox groupBox1;
         internal Button btnSalir;
-        internal Button bntDetalle;
+        internal Button btnDetalle;
         private DataGridViewTextBoxColumn Titulo;
         private DataGridViewTextBoxColumn NombreDescripcion;
-        private DataGridViewTextBoxColumn Fecha_Alta;
-        private DataGridViewTextBoxColumn Id_Usuario_Repositorio;
-        private DataGridViewTextBoxColumn Id_Usuario_Asignado;
-        private DataGridViewTextBoxColumn Id_Producto;
+        private DataGridViewTextBoxColumn columIDBug;
     }
 }
