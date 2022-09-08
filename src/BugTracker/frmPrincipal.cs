@@ -42,5 +42,15 @@ namespace BugTracker
         {
             this.Close();
         }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void archivoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
