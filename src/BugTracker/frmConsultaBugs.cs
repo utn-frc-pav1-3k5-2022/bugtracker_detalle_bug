@@ -124,10 +124,10 @@ namespace BugTracker
             {
                 frmDetalleBug frmDetalle = new frmDetalleBug();
 
-                int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString());
+                //int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString());
 
-                // DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
-                // int idBug = int.Parse(dr[0].ToString());
+                DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                int idBug = int.Parse(dr[0].ToString());
 
                 frmDetalle.InicializarDetalleBug(idBug);
                 frmDetalle.ShowDialog();
