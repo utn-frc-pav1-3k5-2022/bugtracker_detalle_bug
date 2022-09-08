@@ -238,6 +238,7 @@
             this.txtNroBug.Name = "txtNroBug";
             this.txtNroBug.Size = new System.Drawing.Size(89, 26);
             this.txtNroBug.TabIndex = 22;
+            this.txtNroBug.TextChanged += new System.EventHandler(this.txtNroBug_TextChanged);
             // 
             // Label1
             // 

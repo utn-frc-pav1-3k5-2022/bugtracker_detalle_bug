@@ -15,6 +15,7 @@ namespace BugTracker
         public frmConsultaBugs()
         {
             InitializeComponent();
+            dgvBugs.AutoGenerateColumns = false;
         }
 
       
@@ -99,6 +100,8 @@ namespace BugTracker
 
             strSql += " ORDER BY fecha_alta DESC";
             dgvBugs.DataSource = DataManager.GetInstance().ConsultaSQL(strSql, parametros);
+            //Datasource es una propiedad de dgvBugs, q es el cuadrito gris. Sirve para indicarle de donde
+            // tiene que obtener los datos. Esta se encarga de ver como sacar los datos y acomodarlos.
 
             if (dgvBugs.Rows.Count == 0)
             {
@@ -107,5 +110,27 @@ namespace BugTracker
 
         }
 
+        private void dgvBugs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bntDetalle_Click(object sender, EventArgs e)
+        {
+            if(dgvBugs.CurrentRow != null) 
+            { 
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+                DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString()) ;
+                frmDetalle.InicializardetalleBug(idBug);// en vez del 1 tendria q poner el bug q esta seleccionado de la grilla
+                frmDetalle.ShowDialog();
+            }
+        }
+
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bntDetalle.Enabled = true; // esto hace que por lo menos cuando se cargue la grilla
+            // necesite q este algo en la parte gris para ver detalle.
+        }
     }
 }
