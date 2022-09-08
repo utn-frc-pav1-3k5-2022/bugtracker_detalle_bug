@@ -123,8 +123,12 @@ namespace BugTracker
             if (dgvBugs.CurrentRow != null) 
             {
                 frmDetalleBug frmDetalle = new frmDetalleBug();
-                DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
-                int idBug = int.Parse(dr[0].ToString());
+
+                int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString());
+
+                // DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                // int idBug = int.Parse(dr[0].ToString());
+
                 frmDetalle.InicializarDetalleBug(idBug);
                 frmDetalle.ShowDialog();
             }

@@ -25,8 +25,8 @@ namespace BugTracker
         }
 
         internal void InicializarDetalleBug(int idBug) 
-        {     
-               
+        {
+            string strSQL = "SELECT * FROM Bugs WHERE id_bug=idBug ";
         }
     }
 }
