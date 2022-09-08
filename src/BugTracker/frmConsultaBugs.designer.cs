@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnl_filtros = new System.Windows.Forms.GroupBox();
             this.cboProductos = new System.Windows.Forms.ComboBox();
             this.Label5 = new System.Windows.Forms.Label();
@@ -44,14 +45,25 @@
             this.lbl_asignado = new System.Windows.Forms.Label();
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
-            this.dgvBugs = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bntDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.dataManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvBugs = new System.Windows.Forms.DataGridView();
             this.ColumnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_usuario_respo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_asig = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_Criticidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataManagerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_filtros
@@ -227,24 +239,6 @@
             this.lbl_estado.TabIndex = 0;
             this.lbl_estado.Text = "Estado:";
             // 
-            // dgvBugs
-            // 
-            this.dgvBugs.AllowUserToAddRows = false;
-            this.dgvBugs.AllowUserToDeleteRows = false;
-            this.dgvBugs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnTitulo});
-            this.dgvBugs.Location = new System.Drawing.Point(14, 184);
-            this.dgvBugs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dgvBugs.Name = "dgvBugs";
-            this.dgvBugs.ReadOnly = true;
-            this.dgvBugs.RowHeadersWidth = 51;
-            this.dgvBugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBugs.Size = new System.Drawing.Size(1050, 293);
-            this.dgvBugs.TabIndex = 6;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.bntDetalle);
@@ -267,6 +261,7 @@
             this.bntDetalle.TabIndex = 17;
             this.bntDetalle.Text = "Ver Detalle";
             this.bntDetalle.UseVisualStyleBackColor = true;
+            this.bntDetalle.Click += new System.EventHandler(this.bntDetalle_Click);
             // 
             // btnSalir
             // 
@@ -278,6 +273,30 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
+            // dataManagerBindingSource
+            // 
+            this.dataManagerBindingSource.DataSource = typeof(DataManager);
+            // 
+            // dgvBugs
+            // 
+            this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnTitulo,
+            this.ColumnDescripcion,
+            this.ColumnIDBug,
+            this.ColumnFecha,
+            this.ColumnId_usuario_respo,
+            this.ColumnId_asig,
+            this.ColumnId_producto,
+            this.ColumnId_prioridad,
+            this.ColumnId_Criticidad,
+            this.ColumnId_estado});
+            this.dgvBugs.Location = new System.Drawing.Point(22, 177);
+            this.dgvBugs.Name = "dgvBugs";
+            this.dgvBugs.RowTemplate.Height = 25;
+            this.dgvBugs.Size = new System.Drawing.Size(1034, 316);
+            this.dgvBugs.TabIndex = 17;
+            // 
             // ColumnTitulo
             // 
             this.ColumnTitulo.DataPropertyName = "Titulo";
@@ -285,13 +304,76 @@
             this.ColumnTitulo.Name = "ColumnTitulo";
             this.ColumnTitulo.ReadOnly = true;
             // 
+            // ColumnDescripcion
+            // 
+            this.ColumnDescripcion.DataPropertyName = "Descripcion";
+            this.ColumnDescripcion.HeaderText = "Descripcion";
+            this.ColumnDescripcion.Name = "ColumnDescripcion";
+            this.ColumnDescripcion.ReadOnly = true;
+            // 
+            // ColumnIDBug
+            // 
+            this.ColumnIDBug.DataPropertyName = "id_bug";
+            this.ColumnIDBug.HeaderText = "IDBug";
+            this.ColumnIDBug.Name = "ColumnIDBug";
+            this.ColumnIDBug.ReadOnly = true;
+            // 
+            // ColumnFecha
+            // 
+            this.ColumnFecha.DataPropertyName = "fecha_alta";
+            this.ColumnFecha.HeaderText = "fecha_alta";
+            this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
+            // 
+            // ColumnId_usuario_respo
+            // 
+            this.ColumnId_usuario_respo.DataPropertyName = "id_usuario_responsable";
+            this.ColumnId_usuario_respo.HeaderText = "id_usuario_responsable";
+            this.ColumnId_usuario_respo.Name = "ColumnId_usuario_respo";
+            this.ColumnId_usuario_respo.ReadOnly = true;
+            // 
+            // ColumnId_asig
+            // 
+            this.ColumnId_asig.DataPropertyName = "id_usuario_asignado";
+            this.ColumnId_asig.HeaderText = "id_usuario_asignado";
+            this.ColumnId_asig.Name = "ColumnId_asig";
+            this.ColumnId_asig.ReadOnly = true;
+            // 
+            // ColumnId_producto
+            // 
+            this.ColumnId_producto.DataPropertyName = "id_producto";
+            this.ColumnId_producto.HeaderText = "id_producto";
+            this.ColumnId_producto.Name = "ColumnId_producto";
+            this.ColumnId_producto.ReadOnly = true;
+            // 
+            // ColumnId_prioridad
+            // 
+            this.ColumnId_prioridad.DataPropertyName = "id_prioridad";
+            this.ColumnId_prioridad.HeaderText = "id_prioridad";
+            this.ColumnId_prioridad.Name = "ColumnId_prioridad";
+            this.ColumnId_prioridad.ReadOnly = true;
+            // 
+            // ColumnId_Criticidad
+            // 
+            this.ColumnId_Criticidad.DataPropertyName = "id_criticidad";
+            this.ColumnId_Criticidad.HeaderText = "id_criticidad";
+            this.ColumnId_Criticidad.Name = "ColumnId_Criticidad";
+            this.ColumnId_Criticidad.ReadOnly = true;
+            // 
+            // ColumnId_estado
+            // 
+            this.ColumnId_estado.DataPropertyName = "id_estado";
+            this.ColumnId_estado.HeaderText = "id_estado";
+            this.ColumnId_estado.Name = "ColumnId_estado";
+            this.ColumnId_estado.ReadOnly = true;
+            // 
             // frmConsultaBugs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 556);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvBugs);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnl_filtros);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmConsultaBugs";
@@ -299,8 +381,9 @@
             this.Load += new System.EventHandler(this.frmBugs_Load);
             this.pnl_filtros.ResumeLayout(false);
             this.pnl_filtros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataManagerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,10 +406,20 @@
         internal System.Windows.Forms.Label lbl_asignado;
         internal System.Windows.Forms.ComboBox cboEstados;
         internal System.Windows.Forms.Label lbl_estado;
-        internal System.Windows.Forms.DataGridView dgvBugs;
         private GroupBox groupBox1;
         internal Button btnSalir;
         internal Button bntDetalle;
+        private BindingSource dataManagerBindingSource;
+        private DataGridView dgvBugs;
         private DataGridViewTextBoxColumn ColumnTitulo;
+        private DataGridViewTextBoxColumn ColumnDescripcion;
+        private DataGridViewTextBoxColumn ColumnIDBug;
+        private DataGridViewTextBoxColumn ColumnFecha;
+        private DataGridViewTextBoxColumn ColumnId_usuario_respo;
+        private DataGridViewTextBoxColumn ColumnId_asig;
+        private DataGridViewTextBoxColumn ColumnId_producto;
+        private DataGridViewTextBoxColumn ColumnId_prioridad;
+        private DataGridViewTextBoxColumn ColumnId_Criticidad;
+        private DataGridViewTextBoxColumn ColumnId_estado;
     }
 }
