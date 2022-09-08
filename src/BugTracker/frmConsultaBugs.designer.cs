@@ -50,6 +50,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.ColumnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -238,7 +239,8 @@
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTitulo,
-            this.ColumnDescripcion});
+            this.ColumnDescripcion,
+            this.columnIDBug});
             this.dgvBugs.Location = new System.Drawing.Point(14, 184);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvBugs.Name = "dgvBugs";
@@ -247,6 +249,7 @@
             this.dgvBugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBugs.Size = new System.Drawing.Size(1050, 293);
             this.dgvBugs.TabIndex = 6;
+            this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
             // 
             // groupBox1
             // 
@@ -270,6 +273,7 @@
             this.bntDetalle.TabIndex = 17;
             this.bntDetalle.Text = "Ver Detalle";
             this.bntDetalle.UseVisualStyleBackColor = true;
+            this.bntDetalle.Click += new System.EventHandler(this.bntDetalle_Click);
             // 
             // btnSalir
             // 
@@ -294,6 +298,13 @@
             this.ColumnDescripcion.HeaderText = "Descripcion";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
             this.ColumnDescripcion.ReadOnly = true;
+            // 
+            // columnIDBug
+            // 
+            this.columnIDBug.DataPropertyName = "id_bug";
+            this.columnIDBug.HeaderText = "IDBug";
+            this.columnIDBug.Name = "columnIDBug";
+            this.columnIDBug.ReadOnly = true;
             // 
             // frmConsultaBugs
             // 
@@ -339,5 +350,6 @@
         internal Button bntDetalle;
         private DataGridViewTextBoxColumn ColumnTitulo;
         private DataGridViewTextBoxColumn ColumnDescripcion;
+        private DataGridViewTextBoxColumn columnIDBug;
     }
 }

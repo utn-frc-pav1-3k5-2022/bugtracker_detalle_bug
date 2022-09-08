@@ -19,7 +19,7 @@ namespace BugTracker
 
       
 
-        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value) 
         {
             // Datasource: establece el origen de datos de este objeto.
             cbo.DataSource = source;
@@ -108,6 +108,27 @@ namespace BugTracker
         }
 
         private void pnl_filtros_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvBugs.CurrentRow != null)
+            {
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+
+                int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString());
+
+                //DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                //int idBug = int.Parse(dr["id_bug"].ToString());
+
+                frmDetalle.InicializarDetalleBug(idBug);
+                frmDetalle.ShowDialog();
+            }
+        }
+
+        private void dgvBugs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
