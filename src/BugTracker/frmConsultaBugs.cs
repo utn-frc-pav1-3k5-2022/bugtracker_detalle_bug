@@ -117,10 +117,15 @@ namespace BugTracker
         {
             if(dgvBugs.CurrentRow != null) { 
             frmDetalleBug frmDetalle = new frmDetalleBug();
-         //   int idBug = dgvBugs.CurrentRow.DataBoundItem()
-            frmDetalle.InicializarDetalleBug(1);
+            int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString());
+            frmDetalle.InicializarDetalleBug(idBug);
             frmDetalle.ShowDialog();
             }
+        }
+
+        private void dgvBugs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -45,11 +45,12 @@
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
-            this.columnaTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.columnaTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -237,7 +238,8 @@
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaTitulo,
-            this.columnaDescripcion});
+            this.columnaDescripcion,
+            this.columnIDBug});
             this.dgvBugs.Location = new System.Drawing.Point(14, 184);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvBugs.Name = "dgvBugs";
@@ -247,22 +249,7 @@
             this.dgvBugs.Size = new System.Drawing.Size(1050, 293);
             this.dgvBugs.TabIndex = 6;
             this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
-            // 
-            // columnaTitulo
-            // 
-            this.columnaTitulo.DataPropertyName = "titulo";
-            this.columnaTitulo.Frozen = true;
-            this.columnaTitulo.HeaderText = "Titulo";
-            this.columnaTitulo.Name = "columnaTitulo";
-            this.columnaTitulo.ReadOnly = true;
-            // 
-            // columnaDescripcion
-            // 
-            this.columnaDescripcion.DataPropertyName = "descripcion";
-            this.columnaDescripcion.Frozen = true;
-            this.columnaDescripcion.HeaderText = "Descripcion";
-            this.columnaDescripcion.Name = "columnaDescripcion";
-            this.columnaDescripcion.ReadOnly = true;
+            this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
             // 
             // groupBox1
             // 
@@ -298,6 +285,30 @@
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // columnaTitulo
+            // 
+            this.columnaTitulo.DataPropertyName = "titulo";
+            this.columnaTitulo.Frozen = true;
+            this.columnaTitulo.HeaderText = "Titulo";
+            this.columnaTitulo.Name = "columnaTitulo";
+            this.columnaTitulo.ReadOnly = true;
+            // 
+            // columnaDescripcion
+            // 
+            this.columnaDescripcion.DataPropertyName = "descripcion";
+            this.columnaDescripcion.Frozen = true;
+            this.columnaDescripcion.HeaderText = "Descripcion";
+            this.columnaDescripcion.Name = "columnaDescripcion";
+            this.columnaDescripcion.ReadOnly = true;
+            // 
+            // columnIDBug
+            // 
+            this.columnIDBug.DataPropertyName = "id_bug";
+            this.columnIDBug.HeaderText = "Column1";
+            this.columnIDBug.Name = "columnIDBug";
+            this.columnIDBug.ReadOnly = true;
+            this.columnIDBug.Visible = false;
             // 
             // frmConsultaBugs
             // 
@@ -343,5 +354,6 @@
         internal Button btnDetalle;
         private DataGridViewTextBoxColumn columnaTitulo;
         private DataGridViewTextBoxColumn columnaDescripcion;
+        private DataGridViewTextBoxColumn columnIDBug;
     }
 }
