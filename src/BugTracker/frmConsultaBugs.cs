@@ -15,6 +15,8 @@ namespace BugTracker
         public frmConsultaBugs()
         {
             InitializeComponent();
+            dgvBugs.AutoGenerateColumns = false;
+            btnDetalle.Enabled = false;
         }
 
       
@@ -104,8 +106,32 @@ namespace BugTracker
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDetalle.Enabled = true;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvBugs.CurrentRow != null) 
+            {
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+
+                //int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString());
+
+                DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                int idBug = int.Parse(dr[0].ToString());
+
+                frmDetalle.InicializarDetalleBug(idBug);
+                frmDetalle.ShowDialog();
+            }
+        }
     }
 }
