@@ -49,7 +49,34 @@ Para ejecutar el script hacer click sobre el botón `Ejecutar` (o usar la tecla 
 
 ## 3. Actividad: Detalle Bug
 
-(Actividad en Clase)
+3.1 Consulta Bug con JOIN
+
+```sql
+SELECT bug.id_bug, 
+       bug.titulo,
+       bug.descripcion,
+       bug.fecha_alta,
+       bug.id_usuario_responsable,
+       responsable.usuario as responsable,  
+       bug.id_usuario_asignado,
+       asignado.usuario as asignado,
+       bug.id_producto,
+       producto.nombre as producto, 
+       bug.id_prioridad,
+       prioridad.nombre as prioridad,
+       bug.id_criticidad,
+       criticidad.nombre as criticidad, 
+       bug.id_estado,
+       estado.nombre as estado
+   FROM Bugs as bug
+   LEFT JOIN Usuarios as responsable ON responsable.id_usuario = bug.id_usuario_responsable
+   LEFT JOIN Usuarios as asignado ON asignado.id_usuario = bug.id_usuario_asignado
+  INNER JOIN Productos as producto ON producto.id_producto = bug.id_producto
+  INNER JOIN Prioridades as prioridad ON  prioridad.id_prioridad = bug.id_prioridad
+  INNER JOIN Criticidades as criticidad ON criticidad.id_criticidad = bug.id_criticidad
+  INNER JOIN Estados as estado ON estado.id_estado = bug.id_estado
+ WHERE id_bug = 3
+```
 
 ## 4. Versionar los cambios locales (add / commit / push)
 
