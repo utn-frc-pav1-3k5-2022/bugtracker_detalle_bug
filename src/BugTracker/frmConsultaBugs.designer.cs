@@ -45,11 +45,12 @@
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
-            this.NombreTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.NombreTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -237,7 +238,8 @@
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreTitulo,
-            this.NombreDescripcion});
+            this.NombreDescripcion,
+            this.columIDBug});
             this.dgvBugs.Location = new System.Drawing.Point(14, 184);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvBugs.Name = "dgvBugs";
@@ -248,20 +250,6 @@
             this.dgvBugs.TabIndex = 6;
             this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
             this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
-            // 
-            // NombreTitulo
-            // 
-            this.NombreTitulo.DataPropertyName = "Titulo";
-            this.NombreTitulo.HeaderText = "Titulo";
-            this.NombreTitulo.Name = "NombreTitulo";
-            this.NombreTitulo.ReadOnly = true;
-            // 
-            // NombreDescripcion
-            // 
-            this.NombreDescripcion.DataPropertyName = "Descripcion";
-            this.NombreDescripcion.HeaderText = "Descripcion";
-            this.NombreDescripcion.Name = "NombreDescripcion";
-            this.NombreDescripcion.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -298,6 +286,28 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // NombreTitulo
+            // 
+            this.NombreTitulo.DataPropertyName = "Titulo";
+            this.NombreTitulo.HeaderText = "Titulo";
+            this.NombreTitulo.Name = "NombreTitulo";
+            this.NombreTitulo.ReadOnly = true;
+            // 
+            // NombreDescripcion
+            // 
+            this.NombreDescripcion.DataPropertyName = "Descripcion";
+            this.NombreDescripcion.HeaderText = "Descripcion";
+            this.NombreDescripcion.Name = "NombreDescripcion";
+            this.NombreDescripcion.ReadOnly = true;
+            // 
+            // columIDBug
+            // 
+            this.columIDBug.DataPropertyName = "Id_Bug";
+            this.columIDBug.HeaderText = "Id_Bug";
+            this.columIDBug.Name = "columIDBug";
+            this.columIDBug.ReadOnly = true;
+            this.columIDBug.Visible = false;
             // 
             // frmConsultaBugs
             // 
@@ -343,5 +353,6 @@
         internal Button btnDetalle;
         private DataGridViewTextBoxColumn NombreTitulo;
         private DataGridViewTextBoxColumn NombreDescripcion;
+        private DataGridViewTextBoxColumn columIDBug;
     }
 }

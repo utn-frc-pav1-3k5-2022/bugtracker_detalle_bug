@@ -126,6 +126,10 @@ namespace BugTracker
         private void btnDetalle_Click(object sender, EventArgs e)
         {
             frmDetalleBug frmDetalleBug = new frmDetalleBug();
+            int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columIDBug"].Value.ToString());
+
+
+            frmDetalleBug.InicializarDetalleBug(idBug);
             frmDetalleBug.ShowDialog();
         }
     }
