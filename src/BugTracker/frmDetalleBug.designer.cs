@@ -55,7 +55,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(14, 14);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(612, 448);
@@ -80,9 +80,9 @@
             this.tabPage1.Controls.Add(this.txtNroBug);
             this.tabPage1.Controls.Add(this.Label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(604, 420);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Detalle";
@@ -93,7 +93,7 @@
             this.txtCriticidad.Enabled = false;
             this.txtCriticidad.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCriticidad.Location = new System.Drawing.Point(171, 320);
-            this.txtCriticidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCriticidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCriticidad.Name = "txtCriticidad";
             this.txtCriticidad.Size = new System.Drawing.Size(305, 22);
             this.txtCriticidad.TabIndex = 36;
@@ -113,7 +113,7 @@
             this.txtFechaAlta.Enabled = false;
             this.txtFechaAlta.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechaAlta.Location = new System.Drawing.Point(171, 114);
-            this.txtFechaAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFechaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.txtFechaAlta.Name = "txtFechaAlta";
             this.txtFechaAlta.Size = new System.Drawing.Size(143, 22);
             this.txtFechaAlta.TabIndex = 34;
@@ -133,7 +133,7 @@
             this.txtPrioridad.Enabled = false;
             this.txtPrioridad.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrioridad.Location = new System.Drawing.Point(171, 290);
-            this.txtPrioridad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrioridad.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrioridad.Name = "txtPrioridad";
             this.txtPrioridad.Size = new System.Drawing.Size(305, 22);
             this.txtPrioridad.TabIndex = 32;
@@ -153,7 +153,7 @@
             this.txtEstado.Enabled = false;
             this.txtEstado.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEstado.Location = new System.Drawing.Point(171, 261);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(305, 22);
             this.txtEstado.TabIndex = 30;
@@ -173,7 +173,7 @@
             this.txtProducto.Enabled = false;
             this.txtProducto.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProducto.Location = new System.Drawing.Point(171, 86);
-            this.txtProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(305, 22);
             this.txtProducto.TabIndex = 28;
@@ -193,7 +193,7 @@
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDescripcion.Location = new System.Drawing.Point(171, 144);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(305, 111);
@@ -214,7 +214,7 @@
             this.txtTitulo.Enabled = false;
             this.txtTitulo.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTitulo.Location = new System.Drawing.Point(171, 56);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(305, 22);
             this.txtTitulo.TabIndex = 24;
@@ -234,10 +234,11 @@
             this.txtNroBug.Enabled = false;
             this.txtNroBug.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNroBug.Location = new System.Drawing.Point(171, 26);
-            this.txtNroBug.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNroBug.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroBug.Name = "txtNroBug";
             this.txtNroBug.Size = new System.Drawing.Size(78, 22);
             this.txtNroBug.TabIndex = 22;
+            this.txtNroBug.TextChanged += new System.EventHandler(this.txtNroBug_TextChanged);
             // 
             // Label1
             // 
@@ -252,7 +253,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(533, 470);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(88, 26);
             this.btnAceptar.TabIndex = 19;
@@ -267,7 +268,7 @@
             this.ClientSize = new System.Drawing.Size(638, 506);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDetalleBug";
             this.Text = "Detalle de bug";
             this.Load += new System.EventHandler(this.frmDetalleBug_Load);

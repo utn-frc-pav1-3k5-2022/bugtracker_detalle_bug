@@ -45,12 +45,13 @@
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
-            this.ColumnaTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColunmaFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bntDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.ColumnaTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColunmaFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -240,7 +241,8 @@
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaTitulo,
             this.Descripcion,
-            this.ColunmaFechaAlta});
+            this.ColunmaFechaAlta,
+            this.columnIDBug});
             this.dgvBugs.Location = new System.Drawing.Point(14, 184);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvBugs.Name = "dgvBugs";
@@ -251,26 +253,6 @@
             this.dgvBugs.TabIndex = 6;
             this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
             this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
-            // 
-            // ColumnaTitulo
-            // 
-            this.ColumnaTitulo.DataPropertyName = "titulo";
-            this.ColumnaTitulo.HeaderText = "Titulo";
-            this.ColumnaTitulo.Name = "ColumnaTitulo";
-            this.ColumnaTitulo.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // ColunmaFechaAlta
-            // 
-            this.ColunmaFechaAlta.HeaderText = "Fecha Alta";
-            this.ColunmaFechaAlta.Name = "ColunmaFechaAlta";
-            this.ColunmaFechaAlta.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -305,6 +287,34 @@
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // ColumnaTitulo
+            // 
+            this.ColumnaTitulo.DataPropertyName = "titulo";
+            this.ColumnaTitulo.HeaderText = "Titulo";
+            this.ColumnaTitulo.Name = "ColumnaTitulo";
+            this.ColumnaTitulo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // ColunmaFechaAlta
+            // 
+            this.ColunmaFechaAlta.HeaderText = "Fecha Alta";
+            this.ColunmaFechaAlta.Name = "ColunmaFechaAlta";
+            this.ColunmaFechaAlta.ReadOnly = true;
+            // 
+            // columnIDBug
+            // 
+            this.columnIDBug.DataPropertyName = "id_bug";
+            this.columnIDBug.HeaderText = "ID";
+            this.columnIDBug.Name = "columnIDBug";
+            this.columnIDBug.ReadOnly = true;
+            this.columnIDBug.Visible = false;
             // 
             // frmConsultaBugs
             // 
@@ -351,5 +361,6 @@
         private DataGridViewTextBoxColumn ColumnaTitulo;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn ColunmaFechaAlta;
+        private DataGridViewTextBoxColumn columnIDBug;
     }
 }
