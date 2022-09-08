@@ -307,7 +307,6 @@
             this.columIDBug.HeaderText = "Id_Bug";
             this.columIDBug.Name = "columIDBug";
             this.columIDBug.ReadOnly = true;
-            this.columIDBug.Visible = false;
             // 
             // frmConsultaBugs
             // 
