@@ -15,9 +15,11 @@ namespace BugTracker
         public frmConsultaBugs()
         {
             InitializeComponent();
+            //Se tiene que setear si o si aca, Motivo? No lo tiene
+            dgvBugs.AutoGenerateColumns = false;
         }
 
-      
+
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -105,6 +107,37 @@ namespace BugTracker
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void bntDetalle_Click(object sender, EventArgs e)
+        {
+            
+
+            //CurrentRow, me devuelve un objeto
+            if (dgvBugs.CurrentRow != null)
+            {
+                frmDetalleBug frmDetalleBug = new frmDetalleBug();
+
+                int idBug = int.Parse(dgvBugs.CurrentRow.Cells["idBug"].Value.ToString());
+
+                //DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                //int idBug = int.Parse(dr["id_bug"].ToString());
+                frmDetalleBug.inicializarDetalleBug(idBug);
+                frmDetalleBug.ShowDialog();
+            }
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Cuando seleccionamos una fila de la grilla habilitamos el boton
+            //ver detalle
+            bntDetalle.Enabled = true;
         }
 
     }
