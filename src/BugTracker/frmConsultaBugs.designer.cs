@@ -49,6 +49,13 @@
             this.bntDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.ColumnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columnid_usuario_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_asig = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columnid_prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnid_tipicidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
@@ -239,6 +246,13 @@
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTitulo,
+            this.ColumnFecha,
+            this.Columnid_usuario_responsable,
+            this.ColumnId_asig,
+            this.ColumnId_producto,
+            this.Columnid_prioridad,
+            this.columnid_tipicidad,
+            this.ColumnEstado,
             this.ColumnDescripcion,
             this.columnIDBug});
             this.dgvBugs.Location = new System.Drawing.Point(14, 184);
@@ -291,6 +305,54 @@
             this.ColumnTitulo.HeaderText = "Titulo";
             this.ColumnTitulo.Name = "ColumnTitulo";
             this.ColumnTitulo.ReadOnly = true;
+            // 
+            // ColumnFecha
+            // 
+            this.ColumnFecha.HeaderText = "fecha_alta";
+            this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
+            // 
+            // Columnid_usuario_responsable
+            // 
+            this.Columnid_usuario_responsable.DataPropertyName = "id_usuario_responsable";
+            this.Columnid_usuario_responsable.HeaderText = "id_usuario_responsable";
+            this.Columnid_usuario_responsable.Name = "Columnid_usuario_responsable";
+            this.Columnid_usuario_responsable.ReadOnly = true;
+            // 
+            // ColumnId_asig
+            // 
+            this.ColumnId_asig.DataPropertyName = "id_usuario_asignado";
+            this.ColumnId_asig.HeaderText = "id_usuario_asignado";
+            this.ColumnId_asig.Name = "ColumnId_asig";
+            this.ColumnId_asig.ReadOnly = true;
+            // 
+            // ColumnId_producto
+            // 
+            this.ColumnId_producto.DataPropertyName = "id_producto";
+            this.ColumnId_producto.HeaderText = "id_producto";
+            this.ColumnId_producto.Name = "ColumnId_producto";
+            this.ColumnId_producto.ReadOnly = true;
+            // 
+            // Columnid_prioridad
+            // 
+            this.Columnid_prioridad.DataPropertyName = "id_prioridad";
+            this.Columnid_prioridad.HeaderText = "id_prioridad";
+            this.Columnid_prioridad.Name = "Columnid_prioridad";
+            this.Columnid_prioridad.ReadOnly = true;
+            // 
+            // columnid_tipicidad
+            // 
+            this.columnid_tipicidad.DataPropertyName = "id_criticidad";
+            this.columnid_tipicidad.HeaderText = "id_criticidad";
+            this.columnid_tipicidad.Name = "columnid_tipicidad";
+            this.columnid_tipicidad.ReadOnly = true;
+            // 
+            // ColumnEstado
+            // 
+            this.ColumnEstado.DataPropertyName = "id_estado";
+            this.ColumnEstado.HeaderText = "id_estado";
+            this.ColumnEstado.Name = "ColumnEstado";
+            this.ColumnEstado.ReadOnly = true;
             // 
             // ColumnDescripcion
             // 
@@ -349,6 +411,13 @@
         internal Button btnSalir;
         internal Button bntDetalle;
         private DataGridViewTextBoxColumn ColumnTitulo;
+        private DataGridViewTextBoxColumn ColumnFecha;
+        private DataGridViewTextBoxColumn Columnid_usuario_responsable;
+        private DataGridViewTextBoxColumn ColumnId_asig;
+        private DataGridViewTextBoxColumn ColumnId_producto;
+        private DataGridViewTextBoxColumn Columnid_prioridad;
+        private DataGridViewTextBoxColumn columnid_tipicidad;
+        private DataGridViewTextBoxColumn ColumnEstado;
         private DataGridViewTextBoxColumn ColumnDescripcion;
         private DataGridViewTextBoxColumn columnIDBug;
     }
