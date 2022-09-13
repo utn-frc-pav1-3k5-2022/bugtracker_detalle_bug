@@ -46,8 +46,8 @@
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDetalle = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.bntDetalle = new System.Windows.Forms.Button();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -244,7 +244,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bntDetalle);
+            this.groupBox1.Controls.Add(this.btnDetalle);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 664);
@@ -252,6 +252,17 @@
             this.groupBox1.Size = new System.Drawing.Size(1234, 77);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(972, 27);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(117, 36);
+            this.btnDetalle.TabIndex = 17;
+            this.btnDetalle.Text = "Ver Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // btnSalir
             // 
@@ -262,16 +273,6 @@
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // bntDetalle
-            // 
-            this.bntDetalle.Location = new System.Drawing.Point(972, 27);
-            this.bntDetalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntDetalle.Name = "bntDetalle";
-            this.bntDetalle.Size = new System.Drawing.Size(117, 36);
-            this.bntDetalle.TabIndex = 17;
-            this.bntDetalle.Text = "Ver Detalle";
-            this.bntDetalle.UseVisualStyleBackColor = true;
             // 
             // frmConsultaBugs
             // 
@@ -314,6 +315,6 @@
         internal System.Windows.Forms.DataGridView dgvBugs;
         private GroupBox groupBox1;
         internal Button btnSalir;
-        internal Button bntDetalle;
+        internal Button btnDetalle;
     }
 }
