@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_filtros = new System.Windows.Forms.GroupBox();
             this.cboProductos = new System.Windows.Forms.ComboBox();
             this.Label5 = new System.Windows.Forms.Label();
@@ -46,8 +47,12 @@
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.bntDetalle = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.ColumTtitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIDBug = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -233,6 +238,11 @@
             this.dgvBugs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumTtitulo,
+            this.columnIDBug,
+            this.ColumDescripcion,
+            this.ColumnFechaAlta});
             this.dgvBugs.Location = new System.Drawing.Point(16, 245);
             this.dgvBugs.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvBugs.Name = "dgvBugs";
@@ -241,6 +251,8 @@
             this.dgvBugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBugs.Size = new System.Drawing.Size(1200, 391);
             this.dgvBugs.TabIndex = 6;
+            this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
+            this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
             // 
             // groupBox1
             // 
@@ -253,6 +265,17 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             // 
+            // bntDetalle
+            // 
+            this.bntDetalle.Location = new System.Drawing.Point(972, 27);
+            this.bntDetalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.bntDetalle.Name = "bntDetalle";
+            this.bntDetalle.Size = new System.Drawing.Size(117, 36);
+            this.bntDetalle.TabIndex = 17;
+            this.bntDetalle.Text = "Ver Detalle";
+            this.bntDetalle.UseVisualStyleBackColor = true;
+            this.bntDetalle.Click += new System.EventHandler(this.bntDetalle_Click);
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(1099, 27);
@@ -263,15 +286,44 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // bntDetalle
+            // ColumTtitulo
             // 
-            this.bntDetalle.Location = new System.Drawing.Point(972, 27);
-            this.bntDetalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bntDetalle.Name = "bntDetalle";
-            this.bntDetalle.Size = new System.Drawing.Size(117, 36);
-            this.bntDetalle.TabIndex = 17;
-            this.bntDetalle.Text = "Ver Detalle";
-            this.bntDetalle.UseVisualStyleBackColor = true;
+            this.ColumTtitulo.DataPropertyName = "titulo";
+            this.ColumTtitulo.HeaderText = "Titulo";
+            this.ColumTtitulo.MinimumWidth = 6;
+            this.ColumTtitulo.Name = "ColumTtitulo";
+            this.ColumTtitulo.ReadOnly = true;
+            this.ColumTtitulo.Width = 125;
+            // 
+            // columnIDBug
+            // 
+            this.columnIDBug.DataPropertyName = "id_Bug";
+            this.columnIDBug.HeaderText = "ID";
+            this.columnIDBug.MinimumWidth = 6;
+            this.columnIDBug.Name = "columnIDBug";
+            this.columnIDBug.ReadOnly = true;
+            this.columnIDBug.Visible = false;
+            this.columnIDBug.Width = 125;
+            // 
+            // ColumDescripcion
+            // 
+            this.ColumDescripcion.DataPropertyName = "descripcion";
+            this.ColumDescripcion.HeaderText = "Descripcion";
+            this.ColumDescripcion.MinimumWidth = 6;
+            this.ColumDescripcion.Name = "ColumDescripcion";
+            this.ColumDescripcion.ReadOnly = true;
+            this.ColumDescripcion.Width = 125;
+            // 
+            // ColumnFechaAlta
+            // 
+            this.ColumnFechaAlta.DataPropertyName = "fecha_alta";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnFechaAlta.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColumnFechaAlta.HeaderText = "Fecha de Alta";
+            this.ColumnFechaAlta.MinimumWidth = 6;
+            this.ColumnFechaAlta.Name = "ColumnFechaAlta";
+            this.ColumnFechaAlta.ReadOnly = true;
+            this.ColumnFechaAlta.Width = 125;
             // 
             // frmConsultaBugs
             // 
@@ -315,5 +367,9 @@
         private GroupBox groupBox1;
         internal Button btnSalir;
         internal Button bntDetalle;
+        private DataGridViewTextBoxColumn ColumTtitulo;
+        private DataGridViewTextBoxColumn columnIDBug;
+        private DataGridViewTextBoxColumn ColumDescripcion;
+        private DataGridViewTextBoxColumn ColumnFechaAlta;
     }
 }
