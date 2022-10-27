@@ -16,9 +16,7 @@ namespace BugTracker
         {
             InitializeComponent();
         }
-
-      
-
+         
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
             // Datasource: establece el origen de datos de este objeto.
@@ -33,26 +31,36 @@ namespace BugTracker
 
         private void frmBugs_Load(object sender, EventArgs e)
         {
+            btnDetalle.Enabled = false;
 
             LlenarCombo(cboEstados, DataManager.GetInstance().ConsultaSQL("Select * from Estados"), "nombre", "id_estado");
-
             LlenarCombo(cboPrioridades, DataManager.GetInstance().ConsultaSQL("Select * from Prioridades"), "nombre", "id_prioridad");
-
             LlenarCombo(cboCriticidades, DataManager.GetInstance().ConsultaSQL("Select * from Criticidades"), "nombre", "id_criticidad");
-
             LlenarCombo(cboAsignadoA, DataManager.GetInstance().ConsultaSQL("Select * from Usuarios"), "usuario", "id_usuario");
-
             LlenarCombo(cboProductos, DataManager.GetInstance().ConsultaSQL("Select * from Productos"), "nombre", "id_producto");
-
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            string strSql = "SELECT * FROM bugs WHERE 1=1 ";
-            Dictionary<string, object> parametros = new Dictionary<string, object>();
-
             DateTime fechaDesde;
             DateTime fechaHasta;
+
+            if (!DateTime.TryParse(txtFechaDesde.Text, out fechaDesde) 
+                && !DateTime.TryParse(txtFechaHasta.Text, out fechaHasta)
+                && cboEstados.SelectedValue == null
+                && cboAsignadoA.SelectedValue == null
+                && cboPrioridades.SelectedValue == null
+                && cboCriticidades.SelectedValue == null
+                && cboProductos.SelectedValue == null)
+            {
+                MessageBox.Show("Debe ingresar datos para la consulta","Información",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+                string strSql = "SELECT * FROM bugs WHERE 1=1 ";
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+
+            
             if (DateTime.TryParse(txtFechaDesde.Text, out fechaDesde) &&
                 DateTime.TryParse(txtFechaHasta.Text, out fechaHasta))
             {
@@ -98,14 +106,40 @@ namespace BugTracker
             }
 
             strSql += " ORDER BY fecha_alta DESC";
+
+            dgvBugs.AutoGenerateColumns = false;
             dgvBugs.DataSource = DataManager.GetInstance().ConsultaSQL(strSql, parametros);
 
             if (dgvBugs.Rows.Count == 0)
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
+            } 
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bntDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvBugs.CurrentRow != null)
+            {
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+
+                int idBug = int.Parse(dgvBugs.CurrentRow.Cells["id_bug"].Value.ToString());
+
+                //DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                //int idBug = int.Parse(dr["id_bug"].ToString());
+
+                frmDetalle.InicializarDetalleBug(idBug);
+                frmDetalle.ShowDialog();
+            }
+        }
+
+        private void dgvBugs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDetalle.Enabled = true; 
+        }
     }
 }
