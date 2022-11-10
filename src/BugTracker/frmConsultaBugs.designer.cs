@@ -45,7 +45,11 @@
             this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dgvBugs = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.columnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_bug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnResponsalble = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +59,6 @@
             this.columnCriticidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnBorrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDetalle = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.pnl_filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugs)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -245,6 +246,7 @@
             this.dgvBugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnTitulo,
+            this.id_bug,
             this.columnDescripcion,
             this.columnFechaAlta,
             this.columnResponsalble,
@@ -264,12 +266,55 @@
             this.dgvBugs.TabIndex = 6;
             this.dgvBugs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellClick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnDetalle);
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 498);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1080, 58);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(850, 20);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(102, 27);
+            this.btnDetalle.TabIndex = 17;
+            this.btnDetalle.Text = "Ver Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(962, 20);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(102, 27);
+            this.btnSalir.TabIndex = 16;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // columnTitulo
             // 
             this.columnTitulo.DataPropertyName = "titulo";
             this.columnTitulo.HeaderText = "Titulo";
             this.columnTitulo.Name = "columnTitulo";
             this.columnTitulo.ReadOnly = true;
+            // 
+            // id_bug
+            // 
+            this.id_bug.DataPropertyName = "id_bug";
+            this.id_bug.HeaderText = "id_bug";
+            this.id_bug.Name = "id_bug";
+            this.id_bug.ReadOnly = true;
+            this.id_bug.Visible = false;
             // 
             // columnDescripcion
             // 
@@ -334,41 +379,6 @@
             this.columnBorrado.Name = "columnBorrado";
             this.columnBorrado.ReadOnly = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnDetalle);
-            this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 498);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1080, 58);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.Location = new System.Drawing.Point(850, 20);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(102, 27);
-            this.btnDetalle.TabIndex = 17;
-            this.btnDetalle.Text = "Ver Detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
-            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(962, 20);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(102, 27);
-            this.btnSalir.TabIndex = 16;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // frmConsultaBugs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -412,6 +422,7 @@
         internal Button btnSalir;
         internal Button btnDetalle;
         private DataGridViewTextBoxColumn columnTitulo;
+        private DataGridViewTextBoxColumn id_bug;
         private DataGridViewTextBoxColumn columnDescripcion;
         private DataGridViewTextBoxColumn columnFechaAlta;
         private DataGridViewTextBoxColumn columnResponsalble;
