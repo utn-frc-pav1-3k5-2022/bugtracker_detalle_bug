@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace BugTracker
 {
+
     public partial class frmConsultaBugs : Form
     {
         public frmConsultaBugs()
@@ -107,5 +108,23 @@ namespace BugTracker
 
         }
 
+        private void bntDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvBugs.CurrentRow != null)
+            {
+                frmDetalleBug frmDetalle = new frmDetalleBug();
+
+                int idBug = int.Parse(dgvBugs.CurrentRow.Cells["columnIDBug"].Value.ToString());
+
+                //DataRowView dr = (DataRowView)dgvBugs.CurrentRow.DataBoundItem;
+                //int idBug = int.Parse(dr["id_bug"].ToString());
+
+                frmDetalle.InicializarDetalleBug(idBug);
+                frmDetalle.ShowDialog();
+
+            }
+
+        }
+        
     }
 }
